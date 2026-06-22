@@ -124,61 +124,6 @@
   });
 })();
 
-/* CONTACT FORM — validate inputs then show success state */
-(function () {
-  const form = document.getElementById('contact-form');
-  const confirm = document.getElementById('sent-confirm');
-  if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Clear previous errors
-    form.querySelectorAll('.field-error').forEach(el => el.remove());
-    form.querySelectorAll('input, textarea').forEach(el => el.style.borderColor = '');
-
-    // Validate required fields
-    const fields = [
-      { id: 'name',    msg: 'Name is required' },
-      { id: 'email',  msg: 'A valid email is required' },
-      { id: 'message', msg: 'Message is required' },
-    ];
-
-    let valid = true;
-
-    fields.forEach(({ id, msg }) => {
-      const el = document.getElementById(id);
-      const isEmpty = !el.value.trim();
-      const isInvalidEmail = id === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
-
-      if (isEmpty || isInvalidEmail) {
-        el.style.borderColor = '#f472b6';
-        const err = document.createElement('p');
-        err.className = 'field-error';
-        err.style.cssText = 'color:#f472b6;font-size:0.78rem;margin:4px 0 0;';
-        err.textContent = msg;
-        el.parentElement.appendChild(err);
-        valid = false;
-      }
-    });
-
-    if (!valid) return;
-
-    // Show success state
-    form.style.transition = 'opacity 0.4s ease';
-    form.style.opacity = '0';
-    setTimeout(() => {
-      form.style.display = 'none';
-      if (confirm) {
-        confirm.style.display = 'block';
-        confirm.style.opacity = '0';
-        confirm.style.transition = 'opacity 0.4s ease';
-        requestAnimationFrame(() => { confirm.style.opacity = '1'; });
-      }
-    }, 400);
-  });
-})();
-
 /* HERO ORBS + STARS */
 (function () {
   document.querySelectorAll('.hero-orb').forEach(orb => {
@@ -210,11 +155,9 @@
   canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9999;';
   document.body.appendChild(canvas);
 
-  const ctx    = canvas.getContext('2d');
-  let W        = canvas.width  = window.innerWidth;
-  let H        = canvas.height = window.innerHeight;
-  let mouseX   = -999;
-  let mouseY   = -999;
+  const ctx      = canvas.getContext('2d');
+  let W          = canvas.width  = window.innerWidth;
+  let H          = canvas.height = window.innerHeight;
   let isDragging = false;
   const particles = [];
 
@@ -223,7 +166,6 @@
     H = canvas.height = window.innerHeight;
   });
 
-  /* Particle class */
   function Particle(x, y, isBurst) {
     this.x    = x;
     this.y    = y;
@@ -231,23 +173,20 @@
     this.life = 1;
     this.decay = isBurst ? 0.018 + Math.random() * 0.025 : 0.028 + Math.random() * 0.02;
 
-    // sparkle shape: random angle + speed
     const angle = Math.random() * Math.PI * 2;
     const speed = isBurst ? 1.5 + Math.random() * 4 : 0.3 + Math.random() * 1.2;
     this.vx = Math.cos(angle) * speed;
     this.vy = Math.sin(angle) * speed - (isBurst ? 0 : 0.4);
 
-    // pink/purple palette
     const palette = ['#f472b6', '#e879f9', '#c084fc', '#f9a8d4', '#ffffff'];
     this.color = palette[Math.floor(Math.random() * palette.length)];
-
     this.isStar = Math.random() > 0.5;
   }
 
   Particle.prototype.update = function () {
     this.x   += this.vx;
     this.y   += this.vy;
-    this.vy  += 0.06;  
+    this.vy  += 0.06;
     this.life -= this.decay;
     this.size *= 0.97;
   };
@@ -257,7 +196,6 @@
     ctx.globalAlpha = Math.max(0, this.life);
 
     if (this.isStar) {
-      // 4-point sparkle star
       ctx.translate(this.x, this.y);
       ctx.rotate(Date.now() * 0.002);
       ctx.fillStyle = this.color;
@@ -273,7 +211,6 @@
       ctx.closePath();
       ctx.fill();
     } else {
-      // glowing circle
       ctx.shadowBlur  = 12;
       ctx.shadowColor = this.color;
       ctx.fillStyle   = this.color;
@@ -285,35 +222,28 @@
     ctx.restore();
   };
 
-  /* Spawn trail particles on mouse move */
   window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
     const count = isDragging ? 5 : 2;
     for (let i = 0; i < count; i++) {
       particles.push(new Particle(
-        mouseX + (Math.random() - 0.5) * 6,
-        mouseY + (Math.random() - 0.5) * 6,
+        e.clientX + (Math.random() - 0.5) * 6,
+        e.clientY + (Math.random() - 0.5) * 6,
         false
       ));
     }
   });
 
-  /* Burst on click */
   window.addEventListener('click', (e) => {
     for (let i = 0; i < 22; i++) {
       particles.push(new Particle(e.clientX, e.clientY, true));
     }
   });
 
-  /* Track drag state */
   window.addEventListener('mousedown', () => { isDragging = true; });
   window.addEventListener('mouseup',   () => { isDragging = false; });
 
-  /* Animation loop */
   function loop() {
     ctx.clearRect(0, 0, W, H);
-
     for (let i = particles.length - 1; i >= 0; i--) {
       particles[i].update();
       particles[i].draw();
@@ -321,7 +251,6 @@
         particles.splice(i, 1);
       }
     }
-
     requestAnimationFrame(loop);
   }
 

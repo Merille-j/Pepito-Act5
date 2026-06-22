@@ -218,11 +218,30 @@ function initContactForm() {
     btn.innerHTML = '<div class="spinner" style="width:18px;height:18px;border-width:2px;"></div> Sending...';
     btn.disabled = true;
 
-    // Simulate async send
+    // Real async POST to backend
     try {
-      await new Promise(resolve => setTimeout(resolve, 1400));
+      const payload = {
+        name        : document.getElementById('name').value.trim(),
+        email       : document.getElementById('email').value.trim(),
+        project_type: document.getElementById('project-type')?.value || '',
+        message     : document.getElementById('message').value.trim(),
+      };
 
-      // Success
+      const res  = await fetch('/api/contact', {
+        method : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        // Server-side validation errors or 500
+        const errMsg = data.errors ? data.errors.join(' ') : (data.error || 'Something went wrong.');
+        throw new Error(errMsg);
+      }
+
+      // Success — fade out form, show confirmation
       form.style.transition = 'opacity 0.4s ease';
       form.style.opacity = '0';
       setTimeout(() => {
@@ -240,7 +259,7 @@ function initContactForm() {
     } catch (err) {
       btn.innerHTML = originalText;
       btn.disabled = false;
-      showToast('Failed to send message. Please try again.', 'error');
+      showToast(err.message || 'Failed to send message. Please try again.', 'error');
     }
   });
 }

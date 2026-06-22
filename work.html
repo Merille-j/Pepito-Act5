@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Merille Janine Pepito</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="spark-icon">✦</span>
+      <span>Merille Pepito</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html" class="active">Work</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-hire">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span class="bar"></span><span class="bar short"></span><span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="work.html" class="active">Work</a>
+    <a href="skills.html">Skills</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <div class="glow" style="width:500px;height:500px;top:-60px;right:-100px;background:rgba(244,114,182,0.1)"></div>
+    <div class="glow" style="width:400px;height:400px;bottom:100px;left:-150px;background:rgba(168,85,247,0.09)"></div>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <p class="eyebrow">Selected Projects</p>
+      <div class="page-header-row">
+        <h1>My Work</h1>
+        <span class="page-tag">Portfolio</span>
+      </div>
+      <p class="lede">Projects loaded dynamically via <code style="color:var(--pink-400);font-size:0.9em;">fetch()</code> — no page refresh needed.</p>
+    </div>
+
+    <section class="work-section">
+
+      <!-- Live search bar -->
+      <div class="search-wrap" data-reveal>
+        <span class="search-icon">&#9740;</span>
+        <input
+          type="text"
+          id="live-search"
+          placeholder="Search projects, stack, category..."
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Result count -->
+      <p class="search-count" id="search-count"></p>
+
+      <!-- Filter pills -->
+      <div class="filter-row" data-reveal>
+        <button class="filter-pill active" data-filter="all">All</button>
+        <button class="filter-pill" data-filter="Web App">Web App</button>
+        <button class="filter-pill" data-filter="Desktop App">Desktop App</button>
+        <button class="filter-pill" data-filter="UI / UX">UI / UX</button>
+        <button class="filter-pill" data-filter="Python">Python</button>
+        <button class="filter-pill" data-filter="Rust">Rust</button>
+      </div>
+
+      <!-- Project grid — populated by fetch() -->
+      <div class="project-grid" id="project-grid">
+        <!-- Spinner shown here while fetching -->
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="copyright">&copy; 2026 Merille Janine Pepito</span>
+    <div class="footer-socials">
+      <a href="mailto:mjortizpepito@gmail.com" aria-label="Email">@</a>
+      <a href="https://www.linkedin.com/in/merille-janine-pepito-ba5447296/" target="_blank" aria-label="LinkedIn">in</a>
+    </div>
+    <span class="footer-tag">Made with love &amp; magic</span>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/ajax.js"></script>
+</body>
+</html>

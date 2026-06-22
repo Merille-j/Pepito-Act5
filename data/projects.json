@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Minerva Search Engine",
+    "category": "Desktop App",
+    "stack": ["JavaScript"],
+    "year": "2024",
+    "description": "A user-dependent and organized related literature search desktop application developed using JavaScript.",
+    "image": "images/Minerva.jpg",
+    "tags": ["JavaScript", "Desktop App"]
+  },
+  {
+    "id": 2,
+    "title": "Special Surgery Registration System",
+    "category": "Web App",
+    "stack": ["React", "Vite", "Supabase", "JavaScript"],
+    "year": "2024",
+    "description": "A web app developed with Supabase database, React + Vite frontend, and JavaScript backend for surgical patient registration.",
+    "image": "images/SpecialSurgery.jpg",
+    "tags": ["React", "Vite", "Supabase", "Web App"]
+  },
+  {
+    "id": 3,
+    "title": "PondoBro",
+    "category": "Web App",
+    "stack": ["Rust", "ASP.NET Core", "SQLite"],
+    "year": "2024",
+    "description": "A personal finance web app developed with Rust Yew frontend, ASP.NET Core backend, and SQLite database.",
+    "image": "images/PondoBro.jpg",
+    "tags": ["Rust", "ASP.NET Core", "SQLite", "Web App"]
+  },
+  {
+    "id": 4,
+    "title": "SeqWatch",
+    "category": "Python",
+    "stack": ["Python"],
+    "year": "2024",
+    "description": "A sequence monitoring web app developed with Python.",
+    "image": "images/SeqWatch.JPEG",
+    "tags": ["Python", "Web App"]
+  },
+  {
+    "id": 5,
+    "title": "EaseService",
+    "category": "UI / UX",
+    "stack": ["Figma"],
+    "year": "2024",
+    "description": "A UI/UX design prototype for a service-booking platform, created entirely in Figma.",
+    "image": "images/EaseService.JPEG",
+    "tags": ["Figma", "UI / UX"]
+  }
+]

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Merille Janine Pepito</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="spark-icon">✦</span>
+      <span>Merille Pepito</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html" class="nav-hire">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span class="bar"></span><span class="bar short"></span><span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="skills.html">Skills</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <main>
+    <!-- ambient glows -->
+    <div class="glow" style="width:600px;height:600px;top:-100px;left:-200px;background:rgba(168,85,247,0.12)"></div>
+    <div class="glow" style="width:400px;height:400px;bottom:0;right:-100px;background:rgba(244,114,182,0.08)"></div>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <p class="eyebrow">Get To Know Me</p>
+      <div class="page-header-row">
+        <h1>About Me</h1>
+        <span class="page-tag">About</span>
+      </div>
+    </div>
+
+    <!-- ABOUT GRID -->
+    <section class="about-section">
+      <div class="about-grid">
+
+        <!-- Portrait with stat badges -->
+        <div class="about-portrait-wrap" data-reveal>
+          <div class="about-portrait-glow"></div>
+          <div class="about-portrait">
+            <img src="images/Merille.jpg" alt="Merille Janine Pepito" />
+            <div class="shade"></div>
+          </div>
+
+          <!-- Floating stat badges -->
+          <div class="about-stat stat-top">
+            <p class="stat-number">5+</p>
+            <p class="stat-label">Projects Built</p>
+          </div>
+          <div class="about-stat stat-bottom">
+            <p class="stat-number">3+</p>
+            <p class="stat-label">Years Coding</p>
+          </div>
+        </div>
+
+        <!-- Bio copy -->
+        <div class="about-copy" data-reveal data-delay="120">
+          <p class="eyebrow">About Me</p>
+          <h1>
+            A coder who
+            <span class="script" style="font-size:1.3em;display:block;line-height:1;">builds with purpose</span>
+          </h1>
+
+          <p>
+            I'm Merille Janine O. Pepito — a 3rd-year BS Computer Science student at the
+            Polytechnic University of the Philippines, driven by the belief that good software
+            changes lives.
+          </p>
+          <p>
+            From research desktop tools to surgery registration systems, every project I ship
+            is a chance to turn a real problem into something elegant and usable. I work
+            across full-stack web, databases, and systems — and I'm always chasing
+            that moment when the pieces just click.
+          </p>
+          <p>
+            When I'm not coding, you'll find me researching for AWS Cloud Clubs Philippines
+            or diving into new frameworks just to see what's possible.
+          </p>
+
+          <div class="tag-row">
+            <span>Full-Stack Web</span>
+            <span>Systems Design</span>
+            <span>Cloud &amp; Databases</span>
+            <span>UI / UX</span>
+            <span>Research</span>
+          </div>
+
+          <div class="about-actions">
+            <a href="work.html" class="btn-primary">View Work &rarr;</a>
+            <a href="contact.html" class="btn-outline">Contact Me</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Basic info strip -->
+      <div style="margin-top:80px;" data-reveal>
+        <p class="eyebrow">Details</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:24px;">
+          <div style="padding:20px 24px;border-radius:14px;background:var(--surface-light);border:1px solid var(--border);">
+            <p style="margin:0 0 4px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(219,39,119,0.5);font-family:var(--font-label)">Name</p>
+            <p style="margin:0;color:rgba(251,207,232,0.85);font-size:0.92rem;">Merille Janine O. Pepito</p>
+          </div>
+          <div style="padding:20px 24px;border-radius:14px;background:var(--surface-light);border:1px solid var(--border);">
+            <p style="margin:0 0 4px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(219,39,119,0.5);font-family:var(--font-label)">School</p>
+            <p style="margin:0;color:rgba(251,207,232,0.85);font-size:0.92rem;">Polytechnic University of the Philippines</p>
+          </div>
+          <div style="padding:20px 24px;border-radius:14px;background:var(--surface-light);border:1px solid var(--border);">
+            <p style="margin:0 0 4px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(219,39,119,0.5);font-family:var(--font-label)">Course</p>
+            <p style="margin:0;color:rgba(251,207,232,0.85);font-size:0.92rem;">BS Computer Science — 3rd Year</p>
+          </div>
+          <div style="padding:20px 24px;border-radius:14px;background:var(--surface-light);border:1px solid var(--border);">
+            <p style="margin:0 0 4px;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(219,39,119,0.5);font-family:var(--font-label)">Age</p>
+            <p style="margin:0;color:rgba(251,207,232,0.85);font-size:0.92rem;">21</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div style="margin-top:80px;" data-reveal>
+        <p class="eyebrow">Experience</p>
+        <h2 style="font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--pink-50);margin:8px 0 32px;">Where I've Contributed</h2>
+        <ul class="experience-list">
+          <li>
+            <div class="role-title">Researcher — Technology Office</div>
+            <span class="role-company">Amazon Web Services Cloud Clubs Philippines</span>
+            <p class="experience-date">2024 &ndash; Present</p>
+          </li>
+          <li>
+            <div class="role-title">Community Engagement Apprentice</div>
+            <span class="role-company">Yield Guild Games Pilipinas</span>
+            <p class="experience-date">September 2025 &ndash; January 2026</p>
+          </li>
+          <li>
+            <div class="role-title">Researcher and Event Organizer</div>
+            <span class="role-company">NADREMS, Inc.</span>
+            <p class="experience-date">June 2023 &ndash; August 2024</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="copyright">&copy; 2026 Merille Janine Pepito</span>
+    <div class="footer-socials">
+      <a href="mailto:mjortizpepito@gmail.com" aria-label="Email">@</a>
+      <a href="https://www.linkedin.com/in/merille-janine-pepito-ba5447296/" target="_blank" aria-label="LinkedIn">in</a>
+    </div>
+    <span class="footer-tag">Made with love &amp; magic</span>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/ajax.js"></script>
+  <div id="toast-container"></div>
+</body>
+</html>

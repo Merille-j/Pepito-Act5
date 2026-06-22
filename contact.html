@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Merille Janine Pepito</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <span class="spark-icon">✦</span>
+      <span>Merille Pepito</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-hire active">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span class="bar"></span><span class="bar short"></span><span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-drawer" id="mobile-drawer">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="skills.html">Skills</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+
+  <main>
+    <div class="glow" style="width:500px;height:500px;top:-80px;left:-150px;background:rgba(244,114,182,0.1)"></div>
+    <div class="glow" style="width:400px;height:400px;bottom:0;right:-120px;background:rgba(168,85,247,0.09)"></div>
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <p class="eyebrow">Let's Create Together</p>
+      <div class="page-header-row">
+        <h1>Say hello</h1>
+        <span class="page-tag" style="font-family:var(--font-script);color:rgba(236,72,153,0.3);font-size:4rem;">I will get back to you as soon as possible.</span>
+      </div>
+      <p class="lede">Form submits via <code style="color:var(--pink-400);font-size:0.9em;">fetch()</code> — no page reload, instant feedback.</p>
+    </div>
+
+    <section class="contact-section">
+      <div class="contact-grid">
+
+        <!-- LEFT: AJAX form -->
+        <div data-reveal>
+
+          <form class="contact-form" id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="hello@you.com" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="project-type">Project Type</label>
+              <select id="project-type" name="project_type">
+                <option value="" disabled selected>What are we making?</option>
+                <option value="web-app">Web Application</option>
+                <option value="desktop-app">Desktop Application</option>
+                <option value="research">Research Collaboration</option>
+                <option value="internship">Internship / Role</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and anything else I should know..."></textarea>
+            </div>
+
+            <!-- Button shows spinner while submitting -->
+            <button type="submit" class="submit-btn">
+              <span>&#9993;</span> Send Message
+            </button>
+
+          </form>
+
+          <!-- Success state — shown after AJAX submit -->
+          <div class="sent-confirm" id="sent-confirm" style="display:none;">
+            <span class="script" style="font-size:3.5rem;display:block;margin-bottom:16px;">Thank you!</span>
+            <p style="color:rgba(251,207,232,0.65);max-width:400px;margin:0 auto;">
+              Your message was sent via fetch() — no page reload needed. I'll get back to you within 24 hours.
+            </p>
+            <a href="index.html" class="btn-outline" style="display:inline-flex;margin-top:32px;">Back to Home</a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: sidebar -->
+        <div data-reveal data-delay="120">
+
+          <div class="info-card">
+            <h3>Contact Details</h3>
+            <div class="detail-item">
+              <p class="detail-label">Email</p>
+              <p class="detail-value">mjortizpepito@gmail.com</p>
+            </div>
+            <div class="detail-item">
+              <p class="detail-label">Phone</p>
+              <p class="detail-value">+63 969 600 0234</p>
+            </div>
+            <div class="detail-item">
+              <p class="detail-label">Based In</p>
+              <p class="detail-value">Philippines</p>
+            </div>
+            <div class="detail-item">
+              <p class="detail-label">Availability</p>
+              <p class="detail-value">Open to opportunities &mdash; 2026</p>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-top:24px;">
+            <h3>Social</h3>
+            <div class="social-row">
+              <a href="mailto:mjortizpepito@gmail.com">
+                <span class="icon-circle">@</span>
+                <div>
+                  <span class="social-label">Email</span>
+                  <span class="social-handle">mjortizpepito@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/merille-janine-pepito-ba5447296/" target="_blank">
+                <span class="icon-circle">in</span>
+                <div>
+                  <span class="social-label">LinkedIn</span>
+                  <span class="social-handle">Merille Janine Pepito</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span class="copyright">&copy; 2026 Merille Janine Pepito</span>
+    <div class="footer-socials">
+      <a href="mailto:mjortizpepito@gmail.com" aria-label="Email">@</a>
+      <a href="https://www.linkedin.com/in/merille-janine-pepito-ba5447296/" target="_blank" aria-label="LinkedIn">in</a>
+    </div>
+    <span class="footer-tag">Made with love &amp; magic</span>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/ajax.js"></script>
+</body>
+</html>
